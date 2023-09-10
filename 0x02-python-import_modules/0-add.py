@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-if __name__ == "__main__":
-    """Importing module add_0.py to use function add(a, b)"""
 
-    from add_0 import add
+if __name__ == "__main__":
+    """Import the module add_0 and use function add"""
+    from add__0 import add
 
     a = 1
     b = 2
