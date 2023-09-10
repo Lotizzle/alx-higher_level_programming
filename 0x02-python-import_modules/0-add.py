@@ -2,7 +2,8 @@
 
 if __name__ == "__main__":
     """Import the module add_0 and use function add"""
-    from add__0 import add
+    import add_0
+    add = add_0.add
 
     a = 1
     b = 2
