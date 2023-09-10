@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
-    """prints the reuslts of the calculations"""
     from calculator_1 import add, sub, mul, div
 
     a = 10
