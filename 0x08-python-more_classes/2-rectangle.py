@@ -89,7 +89,7 @@ class Rectangle:
     def perimeter(self):
 
         """ Returns the perimeter of Rectangle using the class attributes
-            
+
             Attributes:
                 width (int): the width of the rectangle.
                 height (int): the height of the rectangle.
