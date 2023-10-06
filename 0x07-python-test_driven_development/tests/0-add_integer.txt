@@ -1,0 +1,98 @@
+===============================
+ How to Use 0-add_integer.py
+===============================
+
+This module only contains the ``add_integer(a, b=98)`` function.
+
+Numbers
+=======
+
+``add_integer(a, b=98)`` returns the addition of two arguments. For numbers
+that's equivalent to using the ``+`` operator.
+
+::
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+    >>> add_integer(2, 3)
+    5
+
+::
+
+    >>> add_integer(-2, -3)
+    -5
+
+It also works with floating-point values.
+
+::
+
+    >>> add_integer(1.0, 2.0)
+    3
+
+Also note that float types are casted to int before addition
+
+::
+
+    >>> add_integer(1.9, 1.2)
+    2
+
+::
+
+    >>> add_integer(-1.9, -1.2)
+    -2
+
+Floats and ints can be used together for arguments.
+
+::
+
+    >>> add_integer(1.9, 2)
+    3
+
+The second argument is optional, by default b = 98.
+
+::
+
+    >>> add_integer(-8)
+    90
+
+Non-Numbers
+===========
+
+``add_integer(...)`` operates on the principle that both arguments
+are either integers or floats.
+if either argument is a non integer or non float type
+then TypeError is raised.
+
+::
+
+    >>> add_integer("hi", 2)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+::
+
+    >>> add_integer(3, "AM")
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+::
+
+    >>> add_integer(None)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+if both arguments are non integer or non float types
+then TypeError is raised for only the first argument.
+
+::
+
+    >>> add_integer("PM", "AM")
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+if infinity is provided as an argument then it fails.
+
+::
+
+    >>> add_integer(2, float('inf'))
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to integer
