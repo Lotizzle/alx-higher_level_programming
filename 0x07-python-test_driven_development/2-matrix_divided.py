@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
-"""Defines a matrix division function for only int or float types"""
+"""This module defines a matrix division function
+for only int or float types and returns a new matrix."""
 
 
 def matrix_divided(matrix, div):
