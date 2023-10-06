@@ -9,10 +9,10 @@ Raises:
 
 def add_integer(a, b=98):
     """ This function perfoms the addition of a and b.
-    
+
     Args:
         a: First integer or float
-	b: Second integer or float
+        b: Second integer or float
 
     Returns a + b
     """
