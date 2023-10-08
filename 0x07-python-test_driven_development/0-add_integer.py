@@ -3,14 +3,7 @@
 
 
 def add_integer(a, b=98):
-    """ This function perfoms the addition of a and b.
-
-    Raises:
-        TypeError: if either a or b is non integer or non float.
-
-    Args:
-        a: First integer or float
-        b: Second integer or float
+    """ This function perfoms the integer addition of a and b.
 
     Returns the integer addition of two numbers.
     """
