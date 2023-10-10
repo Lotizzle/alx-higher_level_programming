@@ -1,0 +1,32 @@
+=======================
+How to Use 1-my_list.py
+=======================
+
+This module contains a class ``MyList`` which contains a method
+``print_sorted(self)`` that sorts a list.
+
+Usage
+=====
+
+``print_sorted(...)``  prints the list, but sorted (ascending sort).
+
+::
+
+    >>> MyList = __import__('1-my_list').MyList
+
+    >>> New_list = MyList([6, 1, 2, 3, 5, 4])
+    >>> New_list.print_sorted()
+    [1, 2, 3, 4, 5, 6]
+
+Invalid Input
+=============
+
+The ``printed_sorted`` method only accepts type int elements in the list.
+
+::
+
+   >>> New_list = MyList([2, 4, 5, 7, "S"])
+   >>> New_list.print_sorted()
+   Traceback (most recent call last):
+   ...
+   TypeError: '<' not supported between instances of 'str' and 'int'
