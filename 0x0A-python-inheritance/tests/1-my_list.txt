@@ -17,6 +17,8 @@ Usage
     >>> New_list = MyList([6, 1, 2, 3, 5, 4])
     >>> New_list.print_sorted()
     [1, 2, 3, 4, 5, 6]
+    >>> print(New_list)
+    [6, 1, 2, 3, 5, 4]
 
 Invalid Input
 =============
@@ -30,3 +32,39 @@ The ``printed_sorted`` method only accepts type int elements in the list.
    Traceback (most recent call last):
    ...
    TypeError: '<' not supported between instances of 'str' and 'int'
+
+Not defined objects
+===================
+
+A NameError is raised if no object is defined.
+
+::
+
+    >>> my_list.print_sorted()
+    Traceback (most recent call last):
+    ...
+    NameError: name 'my_list' is not defined
+
+Passing a list
+==============
+
+The list is stored in a variable name.
+
+::
+
+    >>> a  = [7, 5, 4, 3, 6]
+    >>> my_list = MyList(a)
+    >>> my_list.print_sorted()
+    [3, 4, 5, 6, 7]
+
+Empty class
+===========
+
+Prints an empty class if provided
+
+::
+
+    >>> empty_list = []
+    >>> my_list = MyList(empty_list)
+    >>> my_list.print_sorted()
+    []
