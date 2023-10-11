@@ -1,0 +1,89 @@
+==============================
+How to use 7-base_geometry.py
+==============================
+
+This module defines an integer validation function
+``def integer_validator(self, name, value)``.
+
+Usage
+=====
+
+``integer_validator(...) checks if value is an integer otherwise,
+it returns an error message.
+
+::
+
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("a", 5)
+
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("str", 2)
+
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("Three", 3)
+
+
+Invalid Values
+==============
+
+::
+
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("str", 0)
+    Traceback (most recent call last):
+    ValueError: str must be greater than 0
+
+::
+
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("name", -1)
+    Traceback (most recent call last):
+    ValueError: name must be greater than 0
+
+The value parameter only accepts type (int).
+
+::
+
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("name", "Shawn")
+    Traceback (most recent call last):
+    TypeError: name must be an integer
+
+::
+
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("name", None)
+    Traceback (most recent call last):
+    TypeError: name must be an integer
+
+::
+
+     >>> bg = BaseGeometry()
+     >>> bg.integer_validator("name", [2])
+     Traceback (most recent call last):
+     TypeError: name must be an integer
+
+::
+
+     >>> bg = BaseGeometry()
+     >>> bg.integer_validator("name", 2.222)
+     Traceback (most recent call last):
+     TypeError: name must be an integer
+
+If the name and value parameter are missing, the default values are used.
+
+::
+
+     >>> bg = BaseGeometry()
+     >>> bg.integer_validator("name")
+     Traceback (most recent call last):
+     ValueError: name must be greater than 0
+
+::
+
+     >>> bg = BaseGeometry()
+     >>> bg.integer_validator()
+     Traceback (most recent call last):
+     ValueError:  must be greater than 0
+
