@@ -27,12 +27,12 @@ class Rectangle(Base):
             raise ValueError("height must be > 0")
         elif type(x) != int:
             raise TypeError("x must be an integer")
-        elif x < 1:
-            raise ValueError("x must be > 0")
+        elif x < 0:
+            raise ValueError("x must be >= 0")
         elif type(y) != int:
             raise TypeError("y must be an integer")
-        elif y < 1:
-            raise ValueError("y must be > 0")
+        elif y < 0:
+            raise ValueError("y must be >= 0")
         else:
             self.width = width
             self.height = height
@@ -98,8 +98,8 @@ class Rectangle(Base):
 
         if type(value) != int:
             raise TypeError("x must be an integer")
-        if value < 1:
-            raise ValueError("x must be > 0")
+        if value < 0:
+            raise ValueError("x must be >= 0")
         self.__x = value
 
     @property
@@ -114,8 +114,8 @@ class Rectangle(Base):
 
         if type(value) != int:
             raise TypeError("y must be an integer")
-        if value < 1:
-            raise ValueError("y must be > 0")
+        if value < 0:
+            raise ValueError("y must be >= 0")
         self.__y = value
 
     def area(self):
