@@ -137,5 +137,5 @@ class Rectangle(Base):
         """Prints the properties of the Rectangle class."""
 
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
-                                                     self.x, self.y,
-                                                     self.width, self.height)
+                                                       self.x, self.y,
+                                                       self.width, self.height)
