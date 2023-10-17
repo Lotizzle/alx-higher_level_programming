@@ -132,3 +132,10 @@ class Rectangle(Base):
         for i in range(self.height):
             [print("#", end="") for w in range(self.width)]
             print("")
+
+    def __str__(self):
+        """Prints the properties of the Rectangle class."""
+
+        return "[Rectangle] {} {}/{} - {}/{}".format(self.id,
+                                                     self.x, self.y,
+                                                     self.width, self.height)
