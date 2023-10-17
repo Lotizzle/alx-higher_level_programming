@@ -3,6 +3,7 @@
 import json
 import csv
 
+
 class Base:
     """
     Base class to manage id attribute in all future classes
