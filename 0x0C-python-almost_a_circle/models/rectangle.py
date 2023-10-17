@@ -122,3 +122,13 @@ class Rectangle(Base):
         """Returns the area of the Rectangle class."""
 
         return self.width * self.height
+
+    def display(self):
+        """Prints the Rectangle instance with the character #."""
+
+        if self.width == 0 or self.height == 0:
+            return ("")
+
+        for i in range(self.height):
+            [print("#", end="") for w in range(self.width)]
+            print("")
