@@ -136,6 +136,6 @@ class Rectangle(Base):
     def __str__(self):
         """Prints the properties of the Rectangle class."""
 
-        return "[Rectangle] {} {}/{} - {}/{}".format(self.id,
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
                                                      self.x, self.y,
                                                      self.width, self.height)
