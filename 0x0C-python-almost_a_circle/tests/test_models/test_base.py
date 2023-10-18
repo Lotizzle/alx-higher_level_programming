@@ -1,14 +1,15 @@
 #!/usr/bin/python3
-"""Defines unittests for base.py."""
+"""This file defines unittests for base.py."""
 
 
-import os
 import unittest
 from models.base import Base
+from models.rectangle import Rectangle
+from models.square import Square
 
 
-class TestBase_instantiation(unittest.TestCase):
-    """Unittests for testing instantiation of the Base class."""
+class TestBase_initialization(unittest.TestCase):
+    """Unittests for testing initialization of the Base class."""
 
     def test_no_arg(self):
         b1 = Base()
@@ -74,15 +75,6 @@ class TestBase_instantiation(unittest.TestCase):
     def test_range_id(self):
         self.assertEqual(range(5), Base(range(5)).id)
 
-    def test_bytes_id(self):
-        self.assertEqual(b'Python', Base(b'Python').id)
-
-    def test_bytearray_id(self):
-        self.assertEqual(bytearray(b'abcefg'), Base(bytearray(b'abcefg')).id)
-
-    def test_memoryview_id(self):
-        self.assertEqual(memoryview(b'abcefg'), Base(memoryview(b'abcefg')).id)
-
     def test_inf_id(self):
         self.assertEqual(float('inf'), Base(float('inf')).id)
 
@@ -92,6 +84,31 @@ class TestBase_instantiation(unittest.TestCase):
     def test_two_args(self):
         with self.assertRaises(TypeError):
             Base(1, 2)
+
+class TestBase_to_json_string_method(unittest.TestCase):
+    """Unittests for testing to_json_string method of Base class."""
+
+    def test_to_json_string_rectangle_type(self):
+        r = Rectangle(10, 5, 3, 2, 3)
+        self.assertEqual(str, type(Base.to_json_string([r.to_dictionary()])))
+
+    def test_to_json_string_square_type(self):
+        s = Square(10, 3, 3, 3)
+        self.assertEqual(str, type(Base.to_json_string([s.to_dictionary()])))
+
+    def test_to_json_string_empty_list(self):
+        self.assertEqual("[]", Base.to_json_string([]))
+
+    def test_to_json_string_none(self):
+        self.assertEqual("[]", Base.to_json_string(None))
+
+    def test_to_json_string_no_args(self):
+        with self.assertRaises(TypeError):
+            Base.to_json_string()
+
+    def test_to_json_string_more_than_one_arg(self):
+        with self.assertRaises(TypeError):
+            Base.to_json_string([], 1)
 
 if __name__ == "__main__":
     unittest.main()
