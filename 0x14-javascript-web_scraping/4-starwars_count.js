@@ -7,9 +7,9 @@ const characterId = '18';
 
 request(apiUrl, function (error, response, body) {
   if (error) {
-    console.log('Error:', error);
+    console.error('Error:', error);
   } else if (response.statusCode !== 200) {
-    console.log('Request failed with status code:', response.statusCode);
+    console.error('Request failed with status code:', response.statusCode);
   } else {
     const films = JSON.parse(body).results;
     let count = 0;
